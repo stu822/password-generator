@@ -3,29 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Password Generator</title>
   </head>
   <body>
-    <h1>Password Generator</h1>
-    <section class="form">
-      <form id="form" action="">
-        <input type="number" name="num" min="1" id="number-choice" required />
-        <label for="number-choice">Password Length</label>
-        <input type="checkbox" name="option" id="lowercase" value="lowercase" />
-        <label for="lowercase">Lowercase</label>
-        <input type="checkbox" name="option" id="uppercase" value="uppercase" />
-        <label for="uppercase">Uppercase</label>
-        <input type="checkbox" name="option" id="symbol" value="symbol" />
-        <label for="symbol">Symbol</label>
-        <input type="checkbox" name="option" id="number" value="number" />
-        <label for="number">Number</label>
-        <button type="submit">Generate Password</button>
-      </form>
-    </section>
-    <section class="password-display">
-      <h2 id="password"></h2>
-    </section>
+    <div class="container">
+      <h1>Password Generator</h1>
+
+      <section class="password-display">
+        <h2 id="password">Password data</h2>
+      </section>
+      <section class="form">
+        <form id="form" action="">
+          <div class="number-selection-group">
+            <input
+              type="number"
+              name="num"
+              min="1"
+              id="number-choice"
+              value="12"
+              required
+            />
+            <label for="number-choice">Password Length</label>
+          </div>
+          <div class="selection-group">
+            <input
+              type="checkbox"
+              name="option"
+              id="lowercase"
+              value="lowercase"
+              checked
+            />
+            <label for="lowercase">Lowercase</label>
+            <input
+              type="checkbox"
+              name="option"
+              id="uppercase"
+              value="uppercase"
+              checked
+            />
+            <label for="uppercase">Uppercase</label>
+            <input
+              type="checkbox"
+              name="option"
+              id="symbol"
+              value="symbol"
+              checked
+            />
+            <label for="symbol">Symbol</label>
+            <input
+              type="checkbox"
+              name="option"
+              id="number"
+              value="number"
+              checked
+            />
+            <label for="number">Number</label>
+          </div>
+          <button type="submit">Generate Password</button>
+        </form>
+      </section>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
