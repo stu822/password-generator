@@ -16,42 +16,48 @@ form.addEventListener("submit", (e) => {
   let generatedPassword;
   const selectedOptions = [];
   const options = document.getElementsByName("option");
+  const optionsArr = [...options];
+  console.log(optionsArr);
 
-  for (let option of options) {
-    if (option.checked) {
-      selectedOptions.push(option.value);
-    }
-  }
-
-  for (let i = 0; i <= numberChoice; i++) {
-    const chacterType = randomSelection(selectedOptions);
-
-    if (i === 0) {
-      if (chacterType === "lowercase") {
-        generatedPassword = randomSelection(alphabet);
-      } else if (chacterType === "uppercase") {
-        const uppercase = randomSelection(alphabet);
-        generatedPassword = randomSelection(uppercase.toUpperCase());
-      } else if (chacterType === "symbol") {
-        generatedPassword = randomSelection(specialCharacters);
-      } else {
-        generatedPassword = randomSelection(numbers);
-      }
-    } else {
-      if (chacterType === "lowercase") {
-        generatedPassword += randomSelection(alphabet);
-      } else if (chacterType === "uppercase") {
-        const uppercase = randomSelection(alphabet);
-        generatedPassword += randomSelection(uppercase.toUpperCase());
-      } else if (chacterType === "symbol") {
-        generatedPassword += randomSelection(specialCharacters);
-      } else {
-        generatedPassword += randomSelection(numbers);
+  if (!optionsArr.some((option) => option.checked)) {
+    alert("Please select character options");
+  } else {
+    for (let option of options) {
+      if (option.checked) {
+        selectedOptions.push(option.value);
       }
     }
-  }
 
-  password.textContent = generatedPassword;
+    for (let i = 0; i <= numberChoice; i++) {
+      const chacterType = randomSelection(selectedOptions);
+
+      if (i === 0) {
+        if (chacterType === "lowercase") {
+          generatedPassword = randomSelection(alphabet);
+        } else if (chacterType === "uppercase") {
+          const uppercase = randomSelection(alphabet);
+          generatedPassword = randomSelection(uppercase.toUpperCase());
+        } else if (chacterType === "symbol") {
+          generatedPassword = randomSelection(specialCharacters);
+        } else {
+          generatedPassword = randomSelection(numbers);
+        }
+      } else {
+        if (chacterType === "lowercase") {
+          generatedPassword += randomSelection(alphabet);
+        } else if (chacterType === "uppercase") {
+          const uppercase = randomSelection(alphabet);
+          generatedPassword += randomSelection(uppercase.toUpperCase());
+        } else if (chacterType === "symbol") {
+          generatedPassword += randomSelection(specialCharacters);
+        } else {
+          generatedPassword += randomSelection(numbers);
+        }
+      }
+    }
+
+    password.textContent = generatedPassword;
+  }
 });
 
 function randomSelection(arr) {
