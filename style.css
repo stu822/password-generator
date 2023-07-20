@@ -5,6 +5,7 @@
 }
 body {
   font-family: "Open Sans", sans-serif;
+  background-color: #003153;
 }
 
 .container {
@@ -14,12 +15,17 @@ body {
 
 h1 {
   text-align: center;
-  margin-top: 7rem;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
   font-size: 2.5rem;
+  color: #f4f4f9;
 }
-.form {
-  margin: 3rem 1rem;
+section.form {
+  padding: 2.5rem 1rem;
   font-size: 1.1rem;
+  background-color: #ffeaae;
+  border-radius: 0 0 5px 5px;
+  width: 100%;
 }
 
 .number-selection-group {
@@ -41,8 +47,19 @@ h1 {
   border: none;
   border-radius: 5px;
   font: inherit;
+  background-color: #a22522;
+  color: #fff;
 }
 
+.form button:hover {
+  opacity: 0.9;
+}
+.password-display {
+  background-color: #c33149;
+  color: #fff;
+  padding: 1rem 0;
+  border-radius: 5px 5px 0 0;
+}
 .password-display h2 {
   text-align: center;
   padding: 2.7rem;
